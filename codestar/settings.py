@@ -12,9 +12,9 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 import os
 from pathlib import Path
 
-# Import env.py first to set environment variables
-if os.path.isfile(os.path.join(os.path.dirname(__file__), 'env.py')):
-    import env
+env_path = os.path.join(os.path.dirname(__file__), 'env.py')
+if os.path.isfile(env_path):
+    exec(open(env_path).read())
 
 import dj_database_url
 
